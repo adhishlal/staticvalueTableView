@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -19,38 +20,52 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adhish" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2xs-JR-n7n">
-                        <rect key="frame" x="15" y="15" width="290" height="21"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="21" id="4f7-bj-Lec"/>
-                        </constraints>
+                        <rect key="frame" x="90" y="21" width="56" height="21"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9857678644" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gae-aP-TVL">
-                        <rect key="frame" x="15" y="44" width="290" height="21"/>
+                        <rect key="frame" x="90" y="50" width="141" height="21"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="21" id="PnI-k8-XRM"/>
+                            <constraint firstAttribute="height" constant="21" id="0r9-Tj-R5b"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="me.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="b3M-ht-IOC">
+                        <rect key="frame" x="8" y="4" width="70" height="72"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="70" id="PjG-01-olK"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="gae-aP-TVL" firstAttribute="top" secondItem="2xs-JR-n7n" secondAttribute="bottom" constant="8" id="1mH-fd-RaF"/>
-                    <constraint firstItem="gae-aP-TVL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="6PR-Wq-c1S"/>
-                    <constraint firstItem="2xs-JR-n7n" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="ZeI-PG-gQC"/>
-                    <constraint firstItem="2xs-JR-n7n" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="ZhE-c1-n7G"/>
-                    <constraint firstAttribute="trailing" secondItem="2xs-JR-n7n" secondAttribute="trailing" constant="15" id="bim-1n-WwV"/>
-                    <constraint firstAttribute="trailing" secondItem="gae-aP-TVL" secondAttribute="trailing" constant="15" id="oRK-Hj-jSi"/>
+                    <constraint firstItem="gae-aP-TVL" firstAttribute="leading" secondItem="2xs-JR-n7n" secondAttribute="leading" id="1vY-R8-mAM"/>
+                    <constraint firstItem="gae-aP-TVL" firstAttribute="leading" secondItem="b3M-ht-IOC" secondAttribute="trailing" constant="12" id="6Ia-9r-RCH"/>
+                    <constraint firstItem="2xs-JR-n7n" firstAttribute="leading" secondItem="b3M-ht-IOC" secondAttribute="trailing" constant="12" id="AbD-Zp-GJG"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="gae-aP-TVL" secondAttribute="bottom" constant="0.5" id="FFv-QG-7ew"/>
+                    <constraint firstItem="b3M-ht-IOC" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="TEt-nT-Ce5"/>
+                    <constraint firstItem="gae-aP-TVL" firstAttribute="leading" secondItem="b3M-ht-IOC" secondAttribute="trailing" constant="12" id="W8O-AH-Xgf"/>
+                    <constraint firstItem="b3M-ht-IOC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="WDS-L8-6Yp"/>
+                    <constraint firstItem="gae-aP-TVL" firstAttribute="top" secondItem="2xs-JR-n7n" secondAttribute="bottom" constant="8" symbolic="YES" id="WJP-Ks-FNC"/>
+                    <constraint firstItem="gae-aP-TVL" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="eVU-NN-PJn"/>
+                    <constraint firstItem="b3M-ht-IOC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="qM2-4p-1gi"/>
+                    <constraint firstAttribute="bottom" secondItem="b3M-ht-IOC" secondAttribute="bottom" constant="4" id="vSd-7J-9VF"/>
+                    <constraint firstItem="gae-aP-TVL" firstAttribute="top" secondItem="2xs-JR-n7n" secondAttribute="bottom" constant="8" id="wOj-pA-sCD"/>
+                    <constraint firstItem="gae-aP-TVL" firstAttribute="top" secondItem="2xs-JR-n7n" secondAttribute="bottom" constant="8" id="wif-Rd-2I6"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="labelName" destination="2xs-JR-n7n" id="y8n-j0-9H9"/>
                 <outlet property="labelPhone" destination="gae-aP-TVL" id="NCM-ti-N8S"/>
+                <outlet property="profileImage" destination="b3M-ht-IOC" id="QR5-1C-7gY"/>
             </connections>
-            <point key="canvasLocation" x="34" y="72.5"/>
+            <point key="canvasLocation" x="34" y="72"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="me.jpg" width="960" height="960"/>
+    </resources>
 </document>

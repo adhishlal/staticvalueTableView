@@ -16,23 +16,38 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-//        ListTable.register(TableViewCell.self, forCellReuseIdentifier: "cell")
-        
-
-//        ListTable.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
-        
         ListTable.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
 
     }
     
+    var items:[String] = ["Adhish","Adhish 2","Adhish 3","Adhish","Adhish 2","Adhish 3","Adhish","Adhish 2","Adhish 3","Adhish","Adhish 2","Adhish 3"]
+    var phone:[String] = ["8447251759","8447251755","8447251756","8447251759","8447251755","8447251756","8447251759","8447251755","8447251756","8447251759","8447251755","8447251756"]
+    
+    var logoImage: [UIImage] = [
+        UIImage(named: "me.jpg")!,
+        UIImage(named: "me2.jpg")!,
+        UIImage(named: "me3.jpg")!,
+        UIImage(named: "me.jpg")!,
+        UIImage(named: "me2.jpg")!,
+        UIImage(named: "me3.jpg")!,
+        UIImage(named: "me.jpg")!,
+        UIImage(named: "me2.jpg")!,
+        UIImage(named: "me3.jpg")!,
+        UIImage(named: "me.jpg")!,
+        UIImage(named: "me2.jpg")!,
+        UIImage(named: "me3.jpg")!,
+    ]
+
+    
+    //This method actually gives the height that we have defined in our xib file
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
         return 80
     }
 
-    
+    //Method for row count
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 50
+        return items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -42,14 +57,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let identifier = "cell"
         
         var cell: TableViewCell! = tableView.dequeueReusableCell(withIdentifier: identifier) as? TableViewCell
-        
+
         if cell == nil {
             tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: identifier)
-            cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? TableViewCell
+            cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? TableViewCell
         }
-        cell.labelName.text = "Madesan"
+      
+
+            cell.labelName.text = "\(items[indexPath.row])\n"
+            cell.labelPhone.text = "\(indexPath.row):: \(phone[indexPath.row])"
+            cell.profileImage.image=logoImage[indexPath.row]
         
-        cell.labelPhone.text = "097889678665674"
+        
         
         return cell
     }

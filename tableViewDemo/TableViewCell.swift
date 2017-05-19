@@ -13,6 +13,7 @@ class TableViewCell: UITableViewCell {
     
     @IBOutlet weak var labelName: UILabel!
     @IBOutlet weak var labelPhone: UILabel!
+    @IBOutlet weak var profileImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
